@@ -28,7 +28,7 @@ eureka:
 #  enabled: true
 #  show-details: always
 #
-#resilience4j:
+resilience4j:
 #  bulkhead:
 #    instances:
 #      beta:
@@ -40,22 +40,22 @@ eureka:
 #        maxThreadPoolSize: 1
 #        coreThreadPoolSize: 1
 #        queueCapacity: 1
-#  circuitbreaker:
-#    configs:
-#      default:
-#        registerHealthIndicator: true
-#    instances:
-#      beta:
-#        registerHealthIndicator: true
-#        ringBufferSizeInHalfOpenState: 3
-#        waitDurationInOpenState: 10s
-#        ringBufferSizeInClosedState: 5
-#        failureRateThreshold: 50
-#        recordExceptions:
-#          - java.io.IOException
-#          - org.springframework.web.client.HttpServer ErrorException
-#          - java.util.concurrent.TimeoutException
-#          - org.springframework.web.client.ResourceAccessException
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      beta:
+        registerHealthIndicator: true
+        ringBufferSizeInHalfOpenState: 3
+        waitDurationInOpenState: 10s
+        ringBufferSizeInClosedState: 5
+        failureRateThreshold: 50
+        recordExceptions:
+          - java.io.IOException
+          - org.springframework.web.client.HttpServer ErrorException
+          - java.util.concurrent.TimeoutException
+          - org.springframework.web.client.ResourceAccessException
 #  retry:
 #    instances:
 #      beta:
